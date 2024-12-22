@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./index.css"
+    />
+    <script
+      type="module"
+      src="./index.js"
+    ></script>
+    <title>Mini vsCode</title>
+  </head>
+
+  <body id="root">
+    <!-- TopBar -->
+    <header class="flex spaceBetween alignCenter noSelect">
+      <div class="middle">
+        <button class="hover">
+          <img src="./components/svg/arrow-left.svg" />
+        </button>
+        <button class="hover">
+          <img src="./components/svg/arrow-right.svg" />
+        </button>
+        <!-- SearchBar -->
+        <input placeholder="Find" />
+      </div>
+
+      <div>
+        <button
+          class="hover"
+          id="toggleSideBar"
+        >
+          <img src="./components/svg/window.svg" />
+        </button>
+        <button
+          class="hover"
+          id="toggleTerminal"
+        >
+          <img src="./components/svg/terminal.svg" />
+        </button>
+      </div>
+    </header>
+
+    <main class="flex flexRow widthFull">
+      <aside class="flex flexRow noSelect">
+        <!-- sideMenu -->
+        <div
+          class="flex flexCol"
+          style="width: 50px"
+          id="sideMenu"
+        >
+          <button
+            class="hover"
+            style="border-left: 1px solid wheat"
+          >
+            <img
+              src="./components/svg/files.svg"
+              title="Explorer"
+            />
+          </button>
+          <button class="hover">
+            <img
+              src="./components/svg/search.svg"
+              title="Find"
+            />
+          </button>
+        </div>
+        <!-- Explorer -->
+        <div
+          class="flex flexCol explorer"
+          id="explorer"
+        >
+          <div
+            class="space"
+            style="opacity: 0.7"
+          >
+            Explorer
+          </div>
+          <!-- Files -->
+          <div class="flex flexCol">
+            <!-- project name -->
+            <div class="flex flexRow alignCenter spaceBetween">
+              <div
+                class="truncated hover"
+                id="projectName"
+              >
+                <img
+                  src="./components/svg/arrowDown.svg"
+                  alt=""
+                />
+                project
+              </div>
+              <div class="flex flexRow">
+                <button
+                  class="hover"
+                  id="addFile"
+                >
+                  <img src="./components/svg/addFile.svg" />
+                </button>
+                <button
+                  class="hover"
+                  id="addFolder"
+                >
+                  <img src="./components/svg/addFolder.svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- user files -->
+          <div id="files"></div>
+        </div>
+
+        <div
+          class="ruler"
+          id="rulerExplorer"
+        ></div>
+      </aside>
+
+      <div
+        id="right"
+        class="flex flexCol"
+      >
+        <div
+          id="editor"
+          class="widthFull heighthalf hide"
+        >
+          <!-- Taps -->
+          <div
+            class="flex flexRow noSelect"
+            id="taps"
+          ></div>
+          <!-- Editor -->
+          <div
+            class="editor flex flexRow scroll"
+            id="notebook"
+          >
+            <!-- <div id="lineCounter">
+              <p class="counter">1</p>
+              <p class="counter">1</p>
+              <p class="counter">1</p>
+              <p class="counter">1</p>
+              <p class="counter">1</p>
+              <p class="counter">1</p>
+            </div>
+
+            <p
+              id="editorCode"
+              class="scroll"
+              contenteditable="true"
+            ></p> -->
+          </div>
+        </div>
+        <button
+          id="welcome"
+          class="hover"
+          style="opacity: 0.3"
+        >
+          Create a file to start
+        </button>
+        <div
+          class="ruler2"
+          id="rulerBrowser"
+        ></div>
+        <!-- taps -->
+        <ul style="background-color: rgb(28, 28, 35); height: 5vh">
+          <button
+            id="browserTap"
+            class="hover heightFull widthFit"
+          >
+            Browser
+          </button>
+          <button
+            id="terminalTap"
+            class="hover heightFull"
+          >
+            Terminal
+          </button>
+        </ul>
+        <!-- browser -->
+        <div
+          class="browser widthFull heighthalf"
+          id="browser"
+        ></div>
+        <!-- terminal -->
+      </div>
+    </main>
+  </body>
+</html>
